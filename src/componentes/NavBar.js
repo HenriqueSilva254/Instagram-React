@@ -1,24 +1,7 @@
-import ReactDOM from 'react-dom';
-import NavBar from './componentes/NavBar';
-import Body from './componentes/Body';
-
-function App(){
+export default function NavBar(){
     return (
-        <div>
-           <NavBar />
-           
-    <Body />
-        </div>
-    )
-}
-/* 
-function Body(){}
-
-function SideBar(){}
-
-function NavBar(){
-    return (
-         <div class="container">
+    <div class="navbar">
+      <div class="container">
         <div class="logo">
           <ion-icon name="logo-instagram"></ion-icon>
           <div class="separador"></div>
@@ -40,24 +23,6 @@ function NavBar(){
           <ion-icon name="paper-plane-outline"></ion-icon>
         </div>
       </div>
+    </div>
     )
 }
-
-function User(){}
-
-function Stories(){}
-
-function Story(){}
-
-function Posts(){}
-
-function Post(){}
-
-function Suggestions(){}
-
-function Suggestion(){
-
-}
-*/
-
-ReactDOM.render(App(), document.querySelector('.root'))
