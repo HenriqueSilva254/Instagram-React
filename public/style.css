@@ -191,6 +191,13 @@ body {
   margin-right: 6px;
 }
 
+.coracao{
+  display:contents;
+}
+.save{
+  display:contents;
+}
+
 .post .fundo .curtidas {
   display: flex;
   align-items: center;
