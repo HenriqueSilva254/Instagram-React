@@ -44,13 +44,13 @@ export default function Post(props){
       const curtiu = document.getElementById(props.alt)
       const curtidas = document.getElementById(props.alt_cutidas)
       if(contador === 0 ){
-        curtiu.innerHTML = `<ion-icon name="heart"></ion-icon>`
+        curtiu.innerHTML = `<ion-icon data-test="like-post" name="heart"></ion-icon>`
         curtiu.style.color = "red"
         contador = 1
         likes++
         curtidas.innerHTML = `Curtido por <strong>respondeai</strong> e <strong>outras ${likes} pessoas</strong>`
       }else{ 
-        curtiu.innerHTML = `<ion-icon name="heart-outline"></ion-icon>`
+        curtiu.innerHTML = `<ion-icon data-test="like-post" name="heart-outline"></ion-icon>`
         curtiu.style.color = "black"
         contador = 0
         likes--
