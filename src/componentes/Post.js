@@ -21,7 +21,7 @@ export default function Post(props){
         <div class="fundo">
           <div class="acoes">
             <div>
-              <div data-test="like-post" onClick={Curtir} id={props.alt} class="coracao"><ion-icon name="heart-outline"></ion-icon></div>
+              <div  onClick={Curtir} id={props.alt} class="coracao"><ion-icon data-test="like-post" name="heart-outline"></ion-icon></div>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <div data-test="save-post" class="save"><ion-icon name="paper-plane-outline"></ion-icon></div>
             </div>
