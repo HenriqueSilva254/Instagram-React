@@ -27,10 +27,10 @@ export default function Post(props){
             <div>
               <div  onClick={Curtir} id={props.alt} class="coracao"><ion-icon data-test="like-post" name="heart-outline"></ion-icon></div>
               <ion-icon name="chatbubble-outline"></ion-icon>
-              <div data-test="save-post" class="save"><ion-icon name="paper-plane-outline"></ion-icon></div>
+              <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
-            <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
+            <div  data-test="save-post" id={props.save} onClick={Salvar}>
+              <ion-icon name="bookmark-outline"></ion-icon> 
             </div>
           </div>
     
@@ -44,6 +44,18 @@ export default function Post(props){
       </div>
       
     )
+    function Salvar(){
+      const salvar = document.getElementById(props.save)
+     
+      if(contador === 0 ){
+        salvar.innerHTML = ` <ion-icon name="bookmark"></ion-icon>`
+        
+        contador = 1
+        }else{ 
+        salvar.innerHTML = `<ion-icon name="bookmark-outline"></ion-icon>`
+        contador = 0
+              }
+    }
     function Curtir(){
       const curtiu = document.getElementById(props.alt)
       const curtidas = document.getElementById(props.alt_cutidas)
