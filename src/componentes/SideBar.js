@@ -36,7 +36,7 @@ export default function SideBar(){
       
       const verificador = Url.slice(0, 5)
       
-      if (verificador === 'http:') {
+      if (verificador === 'https' ) {
         perfil = Url
         setPerfil(perfil)
         foto.innerHTML = `<img data-test="profile-image" src=${perfil} alt="imagem de perfil"/>`}
