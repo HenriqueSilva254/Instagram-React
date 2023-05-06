@@ -1,6 +1,10 @@
-let likes = 99999
+import { useState } from "react"
 let contador = 0
+
+
 export default function Post(props){
+  let [likes, setLikes] = useState(99999)
+
     return (
       
       <div class="post" data-test="post">
@@ -15,7 +19,7 @@ export default function Post(props){
         </div>
     
         <div class="conteudo">
-          <img src={props.imagem} alt={props.alt_imagem} data-test="post-image" onDoubleClick={Curtir}/>
+          <img src={props.imagem} alt={props.alt_imagem} data-test="post-image" onDoubleClick={ CurtirDoubleClick }/>
         </div>
     
         <div class="fundo">
@@ -48,16 +52,29 @@ export default function Post(props){
         curtiu.style.color = "red"
         contador = 1
         likes++
+        setLikes(likes)
         curtidas.innerHTML = `Curtido por <strong>respondeai</strong> e <strong>outras ${likes} pessoas</strong>`
       }else{ 
         curtiu.innerHTML = `<ion-icon data-test="like-post" name="heart-outline"></ion-icon>`
         curtiu.style.color = "black"
         contador = 0
         likes--
+        setLikes(likes)
         curtidas.innerHTML = `Curtido por <strong>respondeai</strong> e <strong>outras ${likes} pessoas</strong>`
       }
       
     }
-  }
+    function CurtirDoubleClick(){
+      const curtiu = document.getElementById(props.alt)
+      const curtidas = document.getElementById(props.alt_cutidas)
+      if(contador === 0 ){
+        curtiu.innerHTML = `<ion-icon data-test="like-post" name="heart"></ion-icon>`
+        curtiu.style.color = "red"
+        contador = 1
+        likes++
+        setLikes(likes)
+        curtidas.innerHTML = `Curtido por <strong>respondeai</strong> e <strong>outras ${likes} pessoas</strong>`
+      }else {contador = 0}
+    }
 
-  
+  }
