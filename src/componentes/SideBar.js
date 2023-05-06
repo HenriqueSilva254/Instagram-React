@@ -7,7 +7,7 @@ export default function SideBar(){
         <div class="sidebar">
         <div class="usuario">
           <div id="fotoPerfil" onClick={MudarImagem}>
-          <img   src={perfil} alt="imagem de perfil"/>
+          <img  data-test="profile-image" src={perfil} alt="imagem de perfil"/>
           </div>
           <div class="texto">
             <span>
@@ -39,7 +39,7 @@ export default function SideBar(){
       if (verificador === 'http:') {
         perfil = Url
         setPerfil(perfil)
-        foto.innerHTML = `<img src=${perfil} alt="imagem de perfil"/>`}
+        foto.innerHTML = `<img data-test="profile-image" src=${perfil} alt="imagem de perfil"/>`}
       }
 
     }
