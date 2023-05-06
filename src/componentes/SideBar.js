@@ -1,10 +1,14 @@
 import Suggestions from './Suggestions';
+import { useState } from "react"
 
 export default function SideBar(){
+  let [perfil, setPerfil] = useState("assets/img/catanacomics.svg")
     return (
         <div class="sidebar">
         <div class="usuario">
-          <img src="assets/img/catanacomics.svg" alt="imagem de perfil"/>
+          <div id="fotoPerfil" onClick={MudarImagem}>
+          <img   src={perfil} alt="imagem de perfil"/>
+          </div>
           <div class="texto">
             <span>
               <strong>catanacomics</strong>
@@ -26,4 +30,16 @@ export default function SideBar(){
         </div>
       </div>
     )
-}
+    function MudarImagem(){
+      const foto = document.getElementById('fotoPerfil')
+      const Url = prompt('Digite uma URL de imagem, para alterar sua imagem de perfil')
+      
+      const verificador = Url.slice(0, 5)
+      
+      if (verificador === 'http:') {
+        perfil = Url
+        setPerfil(perfil)
+        foto.innerHTML = `<img src=${perfil} alt="imagem de perfil"/>`}
+      }
+
+    }
