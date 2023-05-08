@@ -14,7 +14,7 @@ export default function User() {
             <div class="texto">
                 <span id="nome" >
                     <strong data-test="name">{nome}</strong>
-                    <ion-icon onClick={Mudanome} name="pencil"></ion-icon>
+                    <ion-icon onClick={Mudanome} data-test="name" name="pencil"></ion-icon>
                 </span>
             </div>
         </div>
@@ -31,7 +31,7 @@ export default function User() {
             return (
                 <span id="nome" >
                     <strong data-test="name">{nome}</strong>
-                    <ion-icon onClick={Mudanome} name="pencil"></ion-icon>
+                    <ion-icon onClick={Mudanome} data-test="edit-name" name="pencil"></ion-icon>
                 </span>
             )
         }if (nomePrompt !== ''){
