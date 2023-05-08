@@ -191,12 +191,10 @@ body {
   margin-right: 6px;
 }
 
-.coracao{
+.coracao, .save, .MudarNome{
   display:contents;
 }
-.save{
-  display:contents;
-}
+
 
 .post .fundo .curtidas {
   display: flex;
